@@ -18,7 +18,7 @@ import io.github.krishantx.lib_mgmt.lib_mgmt.service.BookService;
 import io.github.krishantx.lib_mgmt.lib_mgmt.service.UserService;
 
 @RestController
-public class BasicController {
+public class UserController {
     
     @Autowired UserService userService;
     @Autowired BookService bookService;
@@ -55,23 +55,5 @@ public class BasicController {
         userService.deleteUser(userId);
     }
 
-    // TODO Method to add a new book to the database
-    @PostMapping("/book")
-    public void addBook(@RequestBody Book book) {
-        bookService.addBook(book);
-    }
-
-    //TODO Method to return all books
-    @GetMapping("/books")
-    public ArrayList<Book> allBooks() {
-        ArrayList<Book> books = new ArrayList<>();
-        Book book = new Book();
-        book.setBookName("Harry Potter");
-        book.setAvailable(true);
-        book.setBookId(0);
-        book.setCost(300);
-        book.setGenre("Fiction");
-        books.add(book);
-        return books;
-    }
+    
 }

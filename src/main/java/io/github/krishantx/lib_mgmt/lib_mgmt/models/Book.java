@@ -6,9 +6,20 @@ public class Book {
     private boolean available;
     private String bookTitle;
     private String genre;
+    private String author;
     private float cost;
     
-    public int getBookId() { return bookId; }
+    public int getBookId() { 
+        return bookId;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 
     public void setBookId(int bookId) {
         this.bookId = bookId;
