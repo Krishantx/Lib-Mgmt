@@ -1,6 +1,5 @@
 package io.github.krishantx.lib_mgmt.lib_mgmt.controller;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +11,6 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import io.github.krishantx.lib_mgmt.lib_mgmt.models.Book;
 import io.github.krishantx.lib_mgmt.lib_mgmt.models.User;
 import io.github.krishantx.lib_mgmt.lib_mgmt.service.BookService;
 import io.github.krishantx.lib_mgmt.lib_mgmt.service.UserService;

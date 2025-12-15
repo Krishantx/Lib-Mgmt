@@ -13,7 +13,7 @@ import io.github.krishantx.lib_mgmt.lib_mgmt.models.Book;
 @Repository
 public class BookRepo {
     
-    @Autowired
+    @Autowired 
     JdbcTemplate jdbc;
 
     public void addBook(Book book) {   
