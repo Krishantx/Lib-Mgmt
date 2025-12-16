@@ -14,7 +14,7 @@ import io.github.krishantx.lib_mgmt.lib_mgmt.models.Book;
 public class BookRepo {
     
     @Autowired 
-    JdbcTemplate jdbc;
+    private JdbcTemplate jdbc;
 
     public void addBook(Book book) {   
 
@@ -96,5 +96,18 @@ public class BookRepo {
             }
         });
         return books;
+    }
+
+    public void issue(int bookId) {
+        String sql = "update books " +
+        "set available = false " +
+        "where book_id = ?";
+        
+        jdbc.update(sql, bookId);
+    }
+
+    public void returnBook(int bookId) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'returnBook'");
     }
 }
