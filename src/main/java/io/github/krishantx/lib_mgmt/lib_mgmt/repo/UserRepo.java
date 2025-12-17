@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import io.github.krishantx.lib_mgmt.lib_mgmt.models.LoginBody;
 import io.github.krishantx.lib_mgmt.lib_mgmt.models.User;
 
 @Repository
@@ -86,5 +87,16 @@ public class UserRepo {
         });
         return allUsers;
         
+    }
+
+    public boolean authenticateUser(LoginBody loginBody) {
+        String sql = "select COUNT(*) from users where email_id = ? AND password = ?";
+        Integer count = jdbc.queryForObject(
+            sql,
+            Integer.class,
+            loginBody.getEmail(),
+            loginBody.getPassword()
+        );
+        return count != null && count > 0;
     }
 }

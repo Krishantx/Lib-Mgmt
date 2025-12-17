@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import io.github.krishantx.lib_mgmt.lib_mgmt.models.LoginBody;
 import io.github.krishantx.lib_mgmt.lib_mgmt.models.User;
 import io.github.krishantx.lib_mgmt.lib_mgmt.repo.UserRepo;
 
@@ -33,5 +34,9 @@ public class UserService {
 
     public List<User> allUsers() {
         return userRepo.getAllUsers();
+    }
+
+    public boolean authenticateUser(LoginBody loginBody) {
+        return userRepo.authenticateUser(loginBody);
     }
 }

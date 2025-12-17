@@ -8,8 +8,10 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class IssueRepo {
+
     @Autowired
     private JdbcTemplate jdbc;
+
     public void issue(int userId, int bookId) {
         String sql = "insert into issue_log " +
         "(book_id, user_id, issue_date) " +
@@ -19,8 +21,7 @@ public class IssueRepo {
     }
 
     public void returnBook(int bookId) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'returnBook'");
+        
     }
     
 }
